@@ -1,8 +1,10 @@
-from app.api import app as application, db
+from app.api import app, db
 from paths import api_paths, web_paths
 from models.songbooks import EngSongBook, BsSongbook, SwSongbook, SongbookBugAndInfo
 
-with application.app_context():
+with app.app_context():
     db.create_all()
-    
-application.run(debug=True)
+
+app = app    
+if __name__ == "__main__":
+    app.run()
