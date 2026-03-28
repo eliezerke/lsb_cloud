@@ -1,0 +1,102 @@
+.div-drawer 
+{
+    background-color: rgba(0, 0, 0, 0.315);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    z-index: 7;
+}
+
+.drawer-container
+{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    background-color: rgb(34, 34, 34);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    overflow-y: auto;
+    height: 100%;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawer-action-close 
+{
+    background-color: none;
+    border-radius: 20px;
+    align-items: center;
+    height: auto;
+
+}
+.drawer-action-footer 
+{
+    background-color: none;
+    color: rgba(223, 223, 223, 0.673);
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.433);
+    margin: 2px;
+    margin-top: 25px;
+    padding-top: 8px;
+    height: auto;
+    width: 100%;
+}
+
+.not-list 
+{
+    font-size: 24px;
+    list-style: none;
+    animation: backwards;
+    transition: 0.5s;
+}
+.not-list a 
+{
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+    font-weight: 700;
+}
+.not-list a:hover, a:active 
+{
+    background-color: beige;
+    border-radius: 15px;
+    color: rgb(0, 13, 255);
+
+}
+.drawer-menu-title
+{
+    text-align: left;
+    font-size: 25x;
+    margin-left: 10px;
+    width: 60%;
+}
+.drawer-content 
+{
+    background-color: none;
+    min-width: 90%;
+    height: 90%;
+    margin-top: 10px;
+
+}
+.drawer-actions 
+{
+    background-color: none;
+    border: none;
+    text-align: left;
+    min-width: 80%;
+    margin: 10px;
+    padding: 15px;
+
+}
+.close 
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}

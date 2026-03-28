@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block styles %}
+    <link rel="stylesheet" href='{{url_for("static", filename="/styles/faqs.css")}}'/>
+    <link rel="stylesheet" href='{{url_for("static", filename="/styles/index.css")}}'/>
+{% endblock %}
+{% block main_content %}
+<h1 style="padding: 25px;">Leave feedback</h1>
+
+
+<div class="descr ">
+    <img src='{{url_for("static", filename="/img/img.png")}}' width="30%"/>
+    <h2 style="padding: 5px;">I'm patiently waiting for your feedback..feel free to:</h2>
+    <h3> </h3>
+    <h3></h3>
+    <div class="flex descr center">
+        
+        <button style="border-radius: 50px;" onclick="window.location.href = 'mailto:dev.eliezer.media@gmail.com';" class="btn-spacing btn btn-temp">Email</button>
+        <button style="border-radius: 50px;" onclick="window.location.href = 'tel:+254740336004';" class="btn-spacing btn btn-temp">Call</button>
+    </div>
+    <div class="descr center">
+        <h3></h3>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block quick_index %}
+{% endblock %}

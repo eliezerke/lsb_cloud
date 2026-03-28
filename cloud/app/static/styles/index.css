@@ -1,0 +1,72 @@
+@font-face {
+  font-family: titles;
+  src: url(/static/fonts/shanty.ttf);
+}
+.x-profile {
+  padding: 20px;
+  margin-top: 20px;
+}
+.join {
+  background-color: orange;
+  color: #feffff;
+  border-radius: 30px;
+}
+.descr {
+  padding: 15px;
+  background-color: transparent;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.card {
+  padding: 10px;
+  background-image: url(static/img/bride-edition-a.png);
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+}
+h1 {
+  color: rgba(255, 255, 255, 0.844);
+  margin-bottom: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 45px;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .description > .flex {
+    flex-direction: column;
+  }
+  .right-pane {
+    background-color: none;
+    width: 96%;
+  }
+  h1 {
+    color: rgba(255, 255, 255, 0.929);
+    /* text-align: left; */
+    font-weight: 600;
+  }
+  .descr {
+    flex-direction: column;
+  }
+  .descr > button {
+    width: 90%;
+    border-radius: 30px;
+  }
+  .join {
+    background-color: rgba(240, 212, 2, 0.945);
+    color: white;
+  }
+}

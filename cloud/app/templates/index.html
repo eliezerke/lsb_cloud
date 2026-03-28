@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block styles %}
+    <link rel="stylesheet" href='{{url_for("static", filename="/styles/index.css")}}'/>
+{% endblock %}
+{% block main_content %}
+
+<div class="descr">
+    <img src='{{url_for("static", filename="/img/picture12.png")}}' width="75%"/>
+    <h1 style="padding: 5px;">Welcome to livesongbook official website, download this app now! With one tap and enjoy singing!</h1>
+    <h3> </h3>
+    <h3></h3>
+    <div class="flex descr center">
+        <button onclick="window.location.href = '/lsb/download';" class="btn-spacing btn btn-temp join">Download</button>
+        <button onclick="window.location.href = '{{download.pdf}}';" class="btn-spacing btn btn-temp">Learn more</button>
+    </div>
+    <div class="descr center">
+        <h3></h3>
+    </div>
+</div>
+<div class="descr ">
+    <img src='{{url_for("static", filename="/img/picture3.png")}}' width="50%"/>
+    <h1 style="padding: 5px;">Get the apk for Android phones & tablets, and choose how to view songs as verse or full</h1>
+    <h3> </h3>
+    <h3></h3>
+    <div class="flex descr center">
+
+        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.apk}}';" class="btn-spacing btn btn-temp">Get for mobile</button>
+    </div>
+    <div class="descr center">
+        <h3></h3>
+    </div>
+</div>
+<div class="descr ">
+    <img src='{{url_for("static", filename="/img/pc.png")}}' width="50%"/>
+    <h1 style="padding: 5px;">PC setup. This carrries the whole functionality of this software, cool present view and friendly interface for easy operation</h1>
+    <h3> </h3>
+    <h3></h3>
+    <div class="flex descr center">
+
+        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.apk}}';" class="btn-spacing btn btn-temp">Get for PC</button>
+    </div>
+    <div class="descr center">
+        <h3></h3>
+    </div>
+</div>
+<div class="descr ">
+    <h2 style="padding: 2px; margin-left: 50px; margin-right: 50px; color: orange;">Other platfofms are currently not supported but on their way coming, soon they'll be listed here for you keep checking could be even tomorrow!</h2>
+    <h3> </h3>
+    <h1 style="margin-top: 30px;"><q>Thank you for visitng this website, welcome back! God bless you</h1></q>
+    <div class="flex descr center">
+    </div>
+    <div class="descr center">
+        <h3 style="color: gray;">@eliezerkenya</h3>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block quick_index %}
+{% endblock %}

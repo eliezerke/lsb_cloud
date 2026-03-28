@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> eliezersoftdevs </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1"/>
+    <link rel="stylesheet" href='{{url_for("static", filename="/styles/style.css")}}'/>
+    <link rel="stylesheet" href='{{url_for("static", filename="/styles/drawer.css")}}'/>
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+<nav class="nav-bar flex" id="navbar">
+    <div onclick="window.location.href = '/lsb';" class="left-nav flex">
+    </div>
+    
+    <ul class="nav-menu right-nav">
+        {% block nav %}
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/faqs';">FAQs</button></li>
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/download';">Download app</button></li>
+        <!-- <li><button class="btn-link btn-secondary" onclick="toggle.dark();">theme</button></li> -->
+        {% endblock %}
+    </ul>
+    <div onclick="Drawer()" class="mob-dr"></div>
+</nav>
+<div class="div-drawer hidden" id="drawer">
+            <div class="drawer-container flex">
+            <div class="drawer-action-close ">
+                <div onclick="hide_drawer();" class="close"></div>
+            </div>
+            <div class="drawer-content">
+                <ul class="not-list">
+                {% block mob_nav %}
+                <li><a href="/lsb" class="drawer-actions visible">Homepage</a></li>
+                <li><a href="/lsb/contact" class="drawer-actions visible">Contact</a></li>
+                <li><a href="/lsb/download" class="drawer-actions visible">Download</a></li>
+                <li><a href="/lsb/feedback" class="drawer-actions visible">Feedback</a></li>
+                <li><a href="/lsb/faqs" class="drawer-actions visible">FAQs</a></li>
+                {% endblock %}
+                </ul>
+            </div>            
+        </div>
+    </div>
+
+<main class="div-spacing top-main-margin" id="backed">
+
+<!-- SECTION ONE  -->
+
+<!-- Only availlable in PC -->
+<div class="main-frame flex pad backed" id="main">
+    <div class="cont flex">
+        <div class="moveable flex">
+            <div class="div-spacing left-with-bg flex" id="leftpane">
+                <p class="centered p colored">Quick actions</p>
+                {% block nav_panel %}
+                <div class="both">
+                    <button onclick="window.location.href='/lsb';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Homepage</button>
+                    <button onclick="window.location.href='/lsb/download';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Download</button>
+                    <button onclick="window.location.href='/lsb/contact';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Contact</button>
+                    <button onclick="window.location.href='/lsb/feedback';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Feedback</button>
+                    <button onclick="window.location.href = '{{download.pdf}}';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button>
+                </div>
+                <p class="drawer-action-footer">&copy; eliezerkenya</p>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="right-pane div-spacing flex" id="rightpane">
+        <div class="content-box flex" id="contentbox">
+            {% block main_content %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block quick_index %}
+    {% endblock %}
+</main>
+<footer class="page-footer" id="footer">
+    <div class="footer-content" id="footercontent">
+        {% block footer %}
+        <p class="footer-text" id="footertext">&copy; eliezerkenya 2026 . All rights Reserved</p>
+        {% endblock %}
+    </div>
+</footer>
+<script src='{{url_for("static", filename="/scripts/index.js")}}'></script>
+</body>
+</html>
