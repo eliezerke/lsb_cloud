@@ -25,23 +25,23 @@ def contact():
 
 @app.route("/lsb/download/exe")
 def download_exe():
-    return send_file("static/downloads/path.exe")
+    return send_file("static/downloads/path.exe", download_name="win64_lsb_v1.0.exe")
 
 
 @app.route("/lsb/download/apk")
 def download_apk():
-    return send_file("static/downloads/path.apk")
+    return send_file("static/downloads/path.apk", download_name="lsb_v1.0.apk")
 
 
 @app.route("/lsb/download/deb")
 def download_linux():
-    return send_file("static/downloads/path.deb")
+    return send_file("static/downloads/path.deb", download_name="lsb_linux_X64_v1.0.deb")
 
 
 @app.route("/lsb/download/zip")
 def download_win_zip():
-    return send_file("static/downloads/path.zip")
+    return send_file("static/downloads/path.zip", download_name="win64_lsb_1.0.zip")
 
 @app.route("/lsb/guide/pdf")
 def download_guide_pdf():
-    return send_file("static/downloads/guide.pdf")
+    return send_file("static/downloads/guide.pdf", download_name="livesongbook_guide.pdf")
