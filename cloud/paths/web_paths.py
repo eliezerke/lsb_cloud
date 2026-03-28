@@ -40,7 +40,7 @@ def download_linux():
 
 @app.route("/lsb/download/zip")
 def download_win_zip():
-    return send_file("static/downloads/path.zip", download_name="win64_lsb_1.0.zip")
+    return send_file("static/downloads/path.rar", download_name="win64_lsb_1.0.rar")
 
 @app.route("/lsb/guide/pdf")
 def download_guide_pdf():
