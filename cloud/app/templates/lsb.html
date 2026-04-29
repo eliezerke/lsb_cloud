@@ -6,8 +6,8 @@
 
 <div class="descr ">
     <h1 style="padding: 5px;">Select platform to download the app for</h1>
-    <img src='{{url_for("static", filename="/img/pc.png")}}' width="30%"/>
-    <h2 style="padding: 5px;">PC setup. X64 .exe download or WinRar zip file</h2>
+    <img src='{{url_for("static", filename="/img/win.png")}}' width="30%"/>
+    <h2 style="padding: 5px;">Download the PC setup. X64 .exe download or WinRar zip file for windows OS here </h2>
     <h3> </h3>
     <h3></h3>
     <div class="flex descr center">
@@ -21,7 +21,22 @@
 </div>
 
 <div class="descr ">
-    <img src='{{url_for("static", filename="/img/mobile.png")}}' width="30%"/>
+    <img src='{{url_for("static", filename="/img/lin.png")}}' width="30%"/>
+    <h2 style="padding: 5px;">Download the PC setup. X64 .deb download or .tar.gz archive file for Linux OS (debian OS dist.) here </h2>
+    <h3> </h3>
+    <h3></h3>
+    <div class="flex descr center">
+        
+        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.tar}}';" class="btn-spacing btn btn-temp">Download archive .tar.gz</button>
+        <button style="border-radius: 50px;" onclick="alert('.deb file is not available use the archive instead, God bless you!')" class="btn-spacing btn btn-temp">Download executable .deb</button>
+    </div>
+    <div class="descr center">
+        <h3></h3>
+    </div>
+</div>
+
+<div class="descr ">
+    <img src='{{url_for("static", filename="/img/and.png")}}' width="30%"/>
     <h2 style="padding: 5px;">Get the apk for Android phones & tablets</h2>
     <h3> </h3>
     <h3></h3>
@@ -34,7 +49,7 @@
     </div>
 </div>
 <div class="descr ">
-    <h2 style="padding: 2px; margin-left: 50px; margin-right: 50px; color: orange;">Other platfofms are currently not supported but on their way coming, soon they'll be listed here for you keep checking could be even tomorrow!</h2>
+    <h2 style="padding: 2px; margin-left: 50px; margin-right: 50px; color: orange;">Other platforms are currently not supported but on their way coming, soon they'll be listed here for you keep checking could be even tomorrow!</h2>
     <h3> </h3>
 
     <div class="flex descr center">

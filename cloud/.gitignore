@@ -1,5 +1,14 @@
+<<<<<<< HEAD
+./__pycache__
+__pycache__
+.pyc
+.apk
+.exe
+.pdf
+=======
 *__pycache__
 __pycache__
 ./__pycache__
 *.pyc
 *.cpython
+>>>>>>> 3ce58abd96df2e30ab65a4538f152bc5f46e7147

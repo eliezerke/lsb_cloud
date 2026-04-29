@@ -37,6 +37,10 @@ def download_apk():
 def download_linux():
     return send_file("static/downloads/path.deb", download_name="lsb_linux_X64_v1.0.deb")
 
+@app.route("/lsb/download/tar/gz")
+def download_linux_archive():
+    return send_file("static/downloads/path.tar.gz", download_name="lsb_linux_X64_v1.0_archive.tar.gz")
+
 
 @app.route("/lsb/download/zip")
 def download_win_zip():
