@@ -12,3 +12,5 @@ __pycache__
 *.pyc
 *.cpython
 >>>>>>> 3ce58abd96df2e30ab65a4538f152bc5f46e7147
+.venv
+.env
