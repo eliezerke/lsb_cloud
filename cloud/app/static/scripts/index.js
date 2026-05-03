@@ -31,3 +31,9 @@ for (var i = 0; i < accordion.length; i++) {
     }
   });
 }
+
+function RegDownload(type, val) {
+  // Data received from clients for development/design improvemets
+  window.location.href =
+    val + `?ext=${type}&plt=${navigator.platform}&usgt=${navigator.userAgent}`;
+}
