@@ -1,65 +1,104 @@
-{% extends "base.html" %}
-{% block styles %}
-    <link rel="stylesheet" href='{{url_for("static", filename="/styles/index.css")}}'/>
-{% endblock %}
-{% block main_content %}
+{% extends "base.html" %} {% block styles %}
+<link
+  rel="stylesheet"
+  href='{{url_for("static", filename="/styles/index.css")}}'
+/>
+{% endblock %} {% block main_content %}
 
-<div class="descr ">
-    <h1 style="padding: 5px;">Select platform to download the app for</h1>
-    <img src='{{url_for("static", filename="/img/win.png")}}' width="30%"/>
-    <h2 style="padding: 5px;">Download the PC setup. X64 .exe download or WinRar zip file for windows OS here </h2>
-    <h3> </h3>
+<div class="descr">
+  <h1 style="padding: 5px">Select platform to download the app for</h1>
+  <img src='{{url_for("static", filename="/img/win.png")}}' width="30%" />
+  <h2 style="padding: 5px">
+    Download the PC setup. X64 .exe download or WinRar zip file for windows OS
+    here
+  </h2>
+  <h3></h3>
+  <h3></h3>
+  <div class="flex descr center">
+    <button
+      style="border-radius: 50px"
+      onclick="RegDownload(0, '{{download.exe}}')"
+      class="btn-spacing btn btn-temp"
+    >
+      Download X64 .exe
+    </button>
+    <button
+      style="border-radius: 50px"
+      onclick="RegDownload(2, '{{download.rar}}')"
+      class="btn-spacing btn btn-temp"
+    >
+      Download zip archive .rar
+    </button>
+  </div>
+  <div class="descr center">
     <h3></h3>
-    <div class="flex descr center">
-        
-        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.exe}}';" class="btn-spacing btn btn-temp">Download X64 .exe</button>
-        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.rar}}';" class="btn-spacing btn btn-temp">Download zip archive .rar</button>
-    </div>
-    <div class="descr center">
-        <h3></h3>
-    </div>
+  </div>
 </div>
 
-<div class="descr ">
-    <img src='{{url_for("static", filename="/img/lin.png")}}' width="30%"/>
-    <h2 style="padding: 5px;">Download the PC setup. X64 .deb download or .tar.gz archive file for Linux OS (debian OS dist.) here </h2>
-    <h3> </h3>
+<div class="descr">
+  <img src='{{url_for("static", filename="/img/lin.png")}}' width="30%" />
+  <h2 style="padding: 5px">
+    Download the PC setup. X64 .deb download or .tar.gz archive file for Linux
+    OS (debian OS dist.) here
+  </h2>
+  <h3></h3>
+  <h3></h3>
+  <div class="flex descr center">
+    <button
+      style="border-radius: 50px"
+      onclick="RegDownload(1, '{{download.tar}}')"
+      class="btn-spacing btn btn-temp"
+    >
+      Download archive .tar.gz
+    </button>
+    <button
+      style="border-radius: 50px"
+      onclick="
+        alert(
+          '.deb file is not available use the archive instead, God bless you!',
+        )
+      "
+      class="btn-spacing btn btn-temp"
+    >
+      Download executable .deb
+    </button>
+  </div>
+  <div class="descr center">
     <h3></h3>
-    <div class="flex descr center">
-        
-        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.tar}}';" class="btn-spacing btn btn-temp">Download archive .tar.gz</button>
-        <button style="border-radius: 50px;" onclick="alert('.deb file is not available use the archive instead, God bless you!')" class="btn-spacing btn btn-temp">Download executable .deb</button>
-    </div>
-    <div class="descr center">
-        <h3></h3>
-    </div>
+  </div>
 </div>
 
-<div class="descr ">
-    <img src='{{url_for("static", filename="/img/and.png")}}' width="30%"/>
-    <h2 style="padding: 5px;">Get the apk for Android phones & tablets</h2>
-    <h3> </h3>
+<div class="descr">
+  <img src='{{url_for("static", filename="/img/and.png")}}' width="30%" />
+  <h2 style="padding: 5px">Get the apk for Android phones & tablets</h2>
+  <h3></h3>
+  <h3></h3>
+  <div class="flex descr center">
+    <button
+      style="border-radius: 50px"
+      onclick="RegDownload(3, '{{download.apk}}')"
+      class="btn-spacing btn btn-temp"
+    >
+      Download mobile app .apk file
+    </button>
+  </div>
+  <div class="descr center">
     <h3></h3>
-    <div class="flex descr center">
-
-        <button style="border-radius: 50px;" onclick="window.location.href = '{{download.apk}}';" class="btn-spacing btn btn-temp">Download mobile app .apk file</button>
-    </div>
-    <div class="descr center">
-        <h3></h3>
-    </div>
+  </div>
 </div>
-<div class="descr ">
-    <h2 style="padding: 2px; margin-left: 50px; margin-right: 50px; color: orange;">Other platforms are currently not supported but on their way coming, soon they'll be listed here for you keep checking could be even tomorrow!</h2>
-    <h3> </h3>
+<div class="descr">
+  <h2
+    style="padding: 2px; margin-left: 50px; margin-right: 50px; color: orange"
+  >
+    Other platforms are currently not supported but on their way coming, soon
+    they'll be listed here for you keep checking could be even tomorrow!
+  </h2>
+  <h3></h3>
 
-    <div class="flex descr center">
-    </div>
-    <div class="descr center">
-        <h3 style="color: gray;">@eliezerkenya</h3>
-    </div>
+  <div class="flex descr center"></div>
+  <div class="descr center">
+    <h3 style="color: gray">@eliezerkenya</h3>
+  </div>
 </div>
 
-{% endblock %}
-
-{% block quick_index %}
-{% endblock %}
+{% endblock %} {% block quick_index %} {% endblock %}

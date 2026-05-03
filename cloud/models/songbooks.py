@@ -36,3 +36,16 @@ class SongbookBugAndInfo(db.Model):
 
     def __repr__(self):
         return f"BUG: {self.bug_info}"
+    
+class RegDwn(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True)
+    counts = db.Column(db.Integer)
+
+class DeviceInfo(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True)
+    platform = db.Column(db.String(20))
+    user_agent = db.Column(db.String)
+    ext = db.Column(db.Integer)
+
+    def __repr__(self):
+        return f"EXT: {self.ext}, USER_AGENT: {self.user_agent}, PLATFORM: {self.platform}"
