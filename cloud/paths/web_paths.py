@@ -62,7 +62,7 @@ def download_apk():
 @app.route("/lsb/download/deb")
 def download_linux():
     register(request.args)
-    return send_file("static/downloads/path.deb", download_name="lsb_linux_X64_v1.0.deb")
+    return send_file("static/downloads/path.deb", download_name="lsb-desktop-app_1.0.0_amd64.deb")
 
 @app.route("/lsb/download/tar/gz")
 def download_linux_archive():
