@@ -78,7 +78,7 @@ h4 {
 }
 .reading-links > a {
   text-decoration: none;
-  color: brown;
+  color: rgb(111, 111, 111);
 }
 .nav-menu a {
   color: rgb(196, 196, 196);
@@ -368,7 +368,7 @@ p {
 .content-box-img img:hover {
   width: 60%;
   transition-property: all;
-  transition: all 0.9s;
+  transition: ease-in-out 0.9s;
 }
 .x-profile {
   min-height: 400px;

@@ -1,4 +1,4 @@
-from flask import render_template as give, send_file, request
+from flask import render_template as give, send_file, request, redirect, url_for
 from models.download_struct import PATHS
 from models.songbooks import RegDwn, DeviceInfo
 from app.api import app, db
@@ -26,6 +26,30 @@ def register(raw):
 
         db.session.commit()
         print("not yet!", incr)
+
+@app.route("/email") 
+def email():
+  return redirect("mailto:dev.eliezer.media@gmail.com")
+
+@app.route("/")
+def main_web():
+    return give("main.html", download=PATHS)
+
+@app.route("/about")
+def about_me():
+    return give("about.html", download=PATHS)
+
+@app.route("/projects")
+def projects():
+  return give("projects.html", download=PATHS)
+
+@app.route("/contact")
+def contact_me():
+    return give("contactme.html", download=PATHS)
+
+@app.route("/feedback")
+def feedback_me():
+    return give("feedbackme.html", download=PATHS)
 
 @app.route("/lsb")
 def lsb_home():

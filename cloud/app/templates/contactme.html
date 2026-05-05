@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href='{{url_for("static", filename="/styles/contact.css")}}' />
+<link rel="stylesheet" href='{{url_for("static", filename="/styles/web.css")}}' />
+{% endblock %}
+
+{% block main_content %}
+<h1 class="contacts-title">Follow me on:</h1>
+<div class="contacts">
+    <div onclick="window.location.href = `https://wa.me/254740336004`;" class="contact flex">
+        <div class="contact-wa-img"></div>  
+        <div class="contact-title">
+            <h3>Whatsapp</h3>
+    </div>
+</div>
+</div>
+<div class="contacts">
+    <div onclick="window.location.href = `https://m.facebook.com/eliezerkenya`;" class="contact flex">
+        <div class="contact-fb-img"></div>  
+        <div class="contact-title">
+            <h3>Facebook</h3>
+    </div>
+</div>
+</div>
+<div class="contacts">
+    <div onclick="window.location.href = `https://www.instagram.com/eliezerkenya/`;" class="contact flex">
+        <div class="contact-ig-img"></div>  
+        <div class="contact-title">
+            <h3>Instagram</h3>
+        </div>
+    </div>
+</div>
+<div class="contacts flex">
+    <div onclick="window.location.href = `https://github.com/eliezerke`;" class="contact flex">
+        <div class="contact-git-img"></div>  
+        <div class="contact-title">
+            <h3>Github</h3>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block quick_index %}
+{% endblock %}

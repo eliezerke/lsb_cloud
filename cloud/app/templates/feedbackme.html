@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/styles/dialogs.css"/>
+    <link rel="stylesheet" href="/static/styles/web.css"/>
+{% endblock styles %}
+
+{% block main_content %}
+<section class="login-container">
+        <div class="modal-login">
+      <div class="dialog flex">
+        <div class="left-card ">
+          <h1 class="modal-login-image">
+            <img src="/static/img/mail.png" width="40%" />
+          </h1>
+          <h1 class="modal-login-footer">Leave some feedback</h1>
+        </div>
+        <div class="right-card ">
+          <div class="content">
+            <h1 class="modal-login-title">Your feedback matters!</h1>
+            <form class="entry flex">
+              <div class="input-container">
+                <!-- <i class="icon"><img src="/static/img/user.png" width="24" /></i> -->
+              <textarea placeholder="Type your message here..." class="fdbck-message" required></textarea>
+              </div>
+
+              <div class="input-container">
+                <!-- <i class="icon"><img src="/static/img/email.png" width="24" /></i> -->
+                <input
+                  class=""
+                  type="text"
+                  placeholder="Email/phone(optional for contact)"
+                  
+                />
+                
+              </div>
+              
+              <p class="invisible false-validate" id="f-validate">
+                Successful!
+              </p>
+              <p class="invisible true-validate" id="t-validate">
+                Error occured!
+              </p>
+
+              <div class="input-container submit">
+                <p></p>
+                <button class="btn-submit">Submit feedback</button>
+                <p></p>
+              </div>
+              <p class="form-footer">
+                Email instead? <a href="/email">here</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+          <p>&copy; eliezerkenya 2026 . All rights Reserved</p>
+    </footer>
+    </div>
+
+</section>
+
+{% endblock main_content %}

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> eliezersoftdevs </title>
+    <title> eliezerkenya </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1"/>
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/style.css")}}'/>
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/drawer.css")}}'/>
-    <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="/img/favicon.ico")}}'/>
-
+    {% block icon %}
+    <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="/img/bride.png")}}'/>
+    {% endblock %}
     {% block styles %}
     {% endblock %}
 </head>
 <body>
-<nav class="nav-bar flex" id="navbar">
+    <nav class="nav-bar flex" id="navbar">
+    {% block opp_image %}
     <div onclick="window.location.href = '/lsb';" class="left-nav flex">
     </div>
+    {% endblock %}
     
     <ul class="nav-menu right-nav">
         {% block nav %}
@@ -52,7 +55,7 @@
     <div class="cont flex">
         <div class="moveable flex">
             <div class="div-spacing left-with-bg flex" id="leftpane">
-                <p class="centered p colored">Quick actions</p>
+                <p class="centered p colored">Quick panel</p>
                 {% block nav_panel %}
                 <div class="both">
                     <button onclick="window.location.href='/lsb';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Homepage</button>

@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/styles/web.css"/>
+{% endblock %}
+{% block main_content %}
+<span class="content-box-img"><img src="/static/img/eliezer3.png" width="50%"/></span>
+<h1 class="top-mar colored">About Me</h1>
+<div class="x-profile flex">
+    <div class="description flex">
+                <h1>Eliezer Kitendawili Kerindo</h1>
+                    <p id="passion">I'm a software designer persionate in web, mobile and desktop app development, Cybersecurity system development and maintenance</p>
+                    
+                    <!-- BOI -->
+                    <h1 id="bio">Basic Information</h1>
+                    <p id="bio">I am a Kenyan citizen born in Kisii, Kenya. currently living in Bungoma, Kenya. I took my primary education in kisii and my secondary education in Bunngoma and now parsuing my graduate course.</p>
+                    
+                    <!-- Education -->
+                    <h1 id="education">Education</h1>
+                    <p id="education">A university student, studying as a computer scientist. Cybersecurity, software engineering and ethical hacking </p>
+                    
+
+                    <h1 id="extra-info">More information</h1>
+                    <p id="">Well aquainted with Windows, Linux and Android OS's. Good in Python, JavaScript, HTML, CSS, C/C++, SQL, Flutter and more. I work under pressure and i also cope with almost any kind of beings. I like doing projects which can be found on my github repositories from my account in the contact page <a href="/contact" style="color: gray;">here</a> you are free to visit, explore, clone and fork any project. I am a team leader & End time message believer.</p>
+                    
+                    <h1 id="hobbies">Hobbies</h1>
+                    <p id="">
+                        <ul class="not-list left flex div-spacing">
+                            <li class="left btn-spacing">Programming</li>
+                            <li class="left btn-spacing">designing</li>
+                            <li class="left btn-spacing">Reading</li>
+                            <li class="left btn-spacing">music</li>
+                        </ul>
+                   </p>
+    </div>
+</div>
+{% endblock %}
+ {% block quick_index %}
+    <div class="left-with-bg div-spacing hidden pc-only">
+        <ul class="reading-links btn-spacing">
+            <p>Quick index</p>
+            <li class="reading-links btn-spacing"><a href="#bio">Basic info</a></li>
+            <li class="reading-links btn-spacing"><a href="#education">Education</a></li>
+            <li class="reading-links btn-spacing"><a href="#extra-info">Extras</a></li>
+            <li class="reading-links btn-spacing"><a href="#hobbies">Hobbies</a></li>
+        </ul>
+    </div>
+{% endblock %}

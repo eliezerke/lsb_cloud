@@ -1,0 +1,49 @@
+/*
+ # The top left image(logo) -> change below from base.html / style.css
+*/
+
+.left-nav {
+  background-image: url(/static/img/img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.top-main-margin {
+  z-index: 0;
+  background-image: none;
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+.news-action-content 
+{
+    background-color: none;
+    color: #ffda0b;
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.433);
+    margin: 2px;
+    margin-top: 25px;
+    padding-top: 8px;
+    height: auto;
+    width: 100%;
+}
+
+.sub-header 
+{
+    background-color: none;
+    color: #878787;
+    text-align: right;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.433);
+    margin: 2px;
+    margin-top: 25px;
+    padding-bottom: 8px;
+    height: auto;
+    width: 100%;
+}
+
+.mob-news {
+    color: #ffda0b;
+}

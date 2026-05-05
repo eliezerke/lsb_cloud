@@ -1,0 +1,139 @@
+{% extends "base.html" %} {% block styles %}
+<link
+  rel="stylesheet"
+  href='{{url_for("static", filename="/styles/index.css")}}'
+/>
+<link
+  rel="stylesheet"
+  href='{{url_for("static", filename="/styles/web.css")}}'
+/>
+{% endblock %} {% block opp_image %} {% block icon %}
+<link
+  rel="icon"
+  type="image/x-icon"
+  href='{{url_for("static", filename="/img/logo.png")}}'
+/>
+{% endblock %}
+<div onclick="window.location.href = '/'" class="left-nav flex"></div>
+
+{% endblock %} {% block nav %}
+<li>
+  <button
+    class="btn-link btn-secondary"
+    onclick="window.location.href = '/about'"
+  >
+    Portfolio
+  </button>
+</li>
+<li>
+  <button
+    class="btn-link btn-secondary"
+    onclick="
+      alert(
+        'Coming soon! Keep on touch, God bless you. Thanks for your curiosity',
+      )
+    "
+  >
+    Gallery
+  </button>
+</li>
+<li>
+  <button class="btn-link btn-secondary" onclick="window.location.href = '/'">
+    Product & Service
+  </button>
+</li>
+<!-- <li><button class="btn-link btn-secondary" onclick="toggle.dark();">theme</button></li> -->
+
+{% endblock %} {% block mob_nav %}
+<li><a href="/" class="drawer-actions visible">Homepage</a></li>
+<li>
+  <a href="/lsb" class="drawer-actions visible"
+    ><p class="mob-news">What's new(1)</p></a
+  >
+</li>
+<!-- <li><a href="/" class="drawer-actions visible">Services</a></li> -->
+<li><a href="/about" class="drawer-actions visible">Portfolio</a></li>
+<li><a href="/about" class="drawer-actions visible">About me</a></li>
+<li><a href="/contact" class="drawer-actions visible">Contact</a></li>
+<li><a href="/feedback" class="drawer-actions visible">Feedback</a></li>
+<!-- <li><a href="/" class="drawer-actions visible">Products</a></li> -->
+
+{% endblock %} {% block nav_panel %}
+<p class="news-action-content">Lastest Release(1)</p>
+<button
+  onclick="window.location.href = '/lsb'"
+  class="btn-spacing btn-link btn-gen-primary"
+>
+  livesongbook
+</button>
+<p class="drawer-action-footer"></p>
+<div class="both">
+  <button
+    onclick="window.location.href = '/'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    Homepage
+  </button>
+  <button
+    onclick="window.location.href = '/projects'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    Projects
+  </button>
+  <button
+    onclick="window.location.href = '/about'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    About Me
+  </button>
+  <button
+    onclick="window.location.href = '/contact'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    Contact
+  </button>
+  <button
+    onclick="window.location.href = '/feedback'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    Feedback
+  </button>
+</div>
+<p class="drawer-action-footer">&copy; eliezerkenya</p>
+{% endblock %} {% block main_content %}
+
+<div class="descr">
+  <h1 style="padding: 5px">
+    Hey, welcome home. This is eliezerkenya's website, happy to have you aboard!
+    Feel free interacting with me here
+  </h1>
+  <img src='{{url_for("static", filename="/img/img.png")}}' width="50%" />
+  <h3></h3>
+  <br />
+  <h3>If you have a question, ask. Don't go withought being answered</h3>
+  <h3>thanks</h3>
+  <div class="flex descr center">
+    <button
+      onclick="window.location.href = '/about'"
+      class="btn-spacing btn btn-temp join"
+    >
+      Portfolio
+    </button>
+    <button
+      onclick="
+        alert(
+          'Coming soon! Keep on touch, God bless you. Thanks for your curiosity',
+        )
+      "
+      class="btn-spacing btn btn-temp"
+    >
+      Gallery
+    </button>
+  </div>
+  <p class="drawer-action-footer">Projects Overview</p>
+  <div class="descr center">
+    <h3></h3>
+  </div>
+</div>
+
+{% endblock %} {% block quick_index %} {% endblock %}

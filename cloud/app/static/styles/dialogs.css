@@ -1,0 +1,235 @@
+* {
+  text-align: left;
+}
+.flex {
+  display: flex;
+}
+.invisible {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.login-container {
+  background-color: rgb(29, 28, 28);
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+}
+.modal-login {
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  height: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 5%;
+  margin-top: 8%;
+}
+
+.modal-login-title {
+  text-align: center;
+  color: blueviolet;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal-login-image {
+  text-align: center;
+  padding-top: 15%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal-login-footer {
+  text-align: center;
+  padding: 20px;
+  color: rgb(39, 143, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.left-card {
+  background: rgba(2, 2, 2, 0.521);
+  background-image: url(/static/img/cover_image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-repeat: none;
+  border-bottom-left-radius: 20%;
+  border-top-left-radius: 20%;
+  border: none;
+  height: auto;
+  width: 30%;
+}
+.right-card {
+  border-top-right-radius: 2%;
+  background-color: transparent;
+  border: none;
+  height: auto;
+  width: 70%;
+}
+.dialog {
+  background-color: none;
+}
+.content {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 166, 0, 0.26),
+    rgba(62, 37, 255, 0.254),
+    rgba(151, 151, 151, 0.151)
+  );
+  width: 100%;
+  height: 100%;
+}
+
+.entry {
+  align-items: center;
+  margin: 15px;
+  align-self: center;
+  padding: 10px;
+  width: 85%;
+  flex-direction: column;
+}
+.entry input {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid rgba(112, 0, 249, 0.402);
+  background-color: rgb(32, 32, 32);
+  color: rgb(107, 107, 107);
+  font-size: medium;
+  outline: none;
+  width: 100%;
+  padding: 15px;
+}
+.fdbck-message {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid rgba(112, 0, 249, 0.402);
+  background-color: rgb(32, 32, 32);
+  color: rgb(107, 107, 107);
+  font-size: medium;
+  outline: none;
+  width: 100%;
+  padding: 15px;
+}
+
+.entry input:focus {
+  border: 1px solid rgba(52, 45, 255, 0.367);
+}
+
+.btn-submit {
+  background-color: rgba(30, 143, 255, 0.789);
+  border-radius: 20px;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  width: 85%;
+  opacity: 0.9;
+}
+.submit {
+  justify-content: space-between;
+  padding: 5px;
+}
+.btn-submit:hover {
+  background-color: rgb(30, 143, 255);
+}
+.input-container {
+  display: flex;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  border: 1px solid rgba(160, 160, 160, 0.402);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background: rgba(102, 102, 102, 0.774);
+  min-width: 50px;
+  text-align: center;
+}
+.form-footer {
+  padding: 10px;
+  color: white;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+.false-validate {
+  color: rgb(0, 255, 51);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  width: 90%;
+  background-color: rgba(208, 208, 208, 0.756);
+}
+.true-validate {
+  color: red;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  width: 90%;
+  background-color: rgba(208, 208, 208, 0.813);
+}
+.form-footer a:visited {
+  color: rgb(226, 230, 255);
+}
+.login-container .page-footer > p {
+  color: white;
+  text-align: center;
+  bottom: 0;
+  background-color: none;
+}
+@media screen and (max-width: 1000px) {
+  .dialog {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .right-card,
+  .left-card {
+    width: 100%;
+    height: 100%;
+  }
+  .right-card {
+    width: 100%;
+  }
+  .left-card {
+    border-radius: 0;
+  }
+  .content {
+    background-image: linear-gradient(
+      rgb(255, 166, 0, 0.26),
+      rgba(62, 37, 255, 0.254),
+      rgba(151, 151, 151, 0.151)
+    );
+  }
+  .modal-login {
+    margin: 0%;
+    margin-top: 16%;
+  }
+}
+.fdbck-message {
+  min-width: 80%;
+  max-width: 95%;
+  max-height: 300px;
+  height: 150px;
+  width: 90%;
+}
