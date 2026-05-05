@@ -2,7 +2,8 @@
 *__pycache__/
 *.pyo
 *.pyd
-
+*/downloads
+downloads
 .env/
 venv/
 .env
@@ -12,3 +13,9 @@ __pycache__
 *.cpython
 *.pyc
 *.pyo
+*.apk
+*.exe
+*.deb
+*.pdf
+*.tar.gz
+*.rar
