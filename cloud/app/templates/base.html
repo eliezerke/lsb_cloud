@@ -9,6 +9,9 @@
 {% endif %} 
 {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1"/>
+    {% block meta %}
+    <meta name="description" content="The all in one songbook, get mobile/desktop app now.">
+    {% endblock %}
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/style.css")}}'/>
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/drawer.css")}}'/>
     {% block icon %}
@@ -46,6 +49,7 @@
                 <li><a href="/lsb/download" class="drawer-actions visible">Download</a></li>
                 <li><a href="/lsb/feedback" class="drawer-actions visible">Feedback</a></li>
                 <li><a href="/lsb/faqs" class="drawer-actions visible">FAQs</a></li>
+                <li><a href="/" class="drawer-actions visible">Developer</a></li>
                 {% endblock %}
                 </ul>
             </div>            
@@ -68,6 +72,7 @@
                     <button onclick="window.location.href='/lsb/download';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Download</button>
                     <button onclick="window.location.href='/lsb/contact';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Contact</button>
                     <button onclick="window.location.href='/lsb/feedback';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Feedback</button>
+                    <button onclick="window.location.href='/';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Developer</button>
                     <!-- <button onclick="window.location.href = '{{download.pdf}}';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button> -->
                 </div>
                 <p class="drawer-action-footer">&copy; eliezerkenya</p>

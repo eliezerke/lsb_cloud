@@ -11,7 +11,11 @@
   rel="stylesheet"
   href='{{url_for("static", filename="/styles/web.css")}}'
 />
-{% endblock %} {% block opp_image %} {% block icon %}
+{% endblock %} {% block opp_image %} 
+{% block meta %}
+<meta name="description" content="visit eliezerkenya's official website, software developer, programmer, designer" />
+{% endblock %}
+{% block icon %}
 <link
   rel="icon"
   type="image/x-icon"
