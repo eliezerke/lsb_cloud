@@ -1,4 +1,4 @@
-from models.songbooks import SongbookBugAndInfo, EngSongBook, SwSongbook, BsSongbook, DeviceInfo
+from models.songbooks import SongbookBugAndInfo, EngSongBook, SwSongbook, BsSongbook, DeviceInfo, MediaPath
 from flask_restful import reqparse, Resource, marshal_with
 from app.structures import Songbook_struct, DevStruct
 from app.api import db
@@ -7,6 +7,11 @@ class DevRepo(Resource):
     @marshal_with(DevStruct.DEV_INFO)
     def get(self):
         return DeviceInfo().query.all()
+    
+class MediaRepo(Resource):
+    @marshal_with(DevStruct.MEDIA_INFO)
+    def get(self):
+        return MediaPath().query.all()
 
 class HeadOffice(Resource):
     def get(self):

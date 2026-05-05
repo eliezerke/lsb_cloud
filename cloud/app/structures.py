@@ -15,3 +15,8 @@ class DevStruct():
         "platform": fields.String,
         "user_agent": fields.String
     }
+
+    MEDIA_INFO = {
+        "id": fields.Integer,
+        "path": fields.String,
+    }

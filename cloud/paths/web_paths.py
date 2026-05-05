@@ -1,21 +1,30 @@
-from flask import render_template as give, send_file, request, redirect, url_for
+from flask import render_template as give, send_file, request, redirect
 from models.download_struct import PATHS
-from models.songbooks import RegDwn, DeviceInfo
+from models.songbooks import RegDwn, DeviceInfo, MediaPath
 from app.api import app, db
 
 plus = lambda e: (e + 1)
+
+def identify_request(req: dict):
+    if req != {}:
+        keys = req.keys()
+        for key in keys:
+            if key not in ["ext", "usgt", "plt"]:
+                try:
+                    media = MediaPath(path=key)
+                    db.session.add(media)
+                    db.session.commit()
+                except:
+                    pass
 
 def register(raw):
     try:
         curr = RegDwn.query.filter_by(id=int(raw['ext'])).first()
         adnl = DeviceInfo(platform=raw['plt'], user_agent=raw['usgt'], ext=raw['ext'])
         curr.counts = plus(curr.counts)
-
         db.session.add(curr)
         db.session.add(adnl)
-
         db.session.commit()
-        print(curr.counts)
 
     except:
         incr = RegDwn(id=int(raw['ext']), counts=1)
@@ -25,7 +34,6 @@ def register(raw):
         db.session.add(adnl)
 
         db.session.commit()
-        print("not yet!", incr)
 
 @app.route("/email") 
 def email():
@@ -33,6 +41,7 @@ def email():
 
 @app.route("/")
 def main_web():
+    identify_request(request.args)
     return give("main.html", download=PATHS)
 
 @app.route("/about")
@@ -53,6 +62,7 @@ def feedback_me():
 
 @app.route("/lsb")
 def lsb_home():
+    identify_request(request.args)
     return give("index.html", download=PATHS)
 
 @app.route("/lsb/download")

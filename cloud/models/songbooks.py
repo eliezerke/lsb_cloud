@@ -49,3 +49,7 @@ class DeviceInfo(db.Model):
 
     def __repr__(self):
         return f"EXT: {self.ext}, USER_AGENT: {self.user_agent}, PLATFORM: {self.platform}"
+    
+class MediaPath(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True)
+    path = db.Column(db.String(20))
