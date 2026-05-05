@@ -37,19 +37,19 @@ def main_web():
 
 @app.route("/about")
 def about_me():
-    return give("about.html", download=PATHS)
+    return give("about.html", download=PATHS, title="eliezerkenya | about")
 
 @app.route("/projects")
 def projects():
-  return give("projects.html", download=PATHS)
+  return give("projects.html", download=PATHS, title="eliezerkenya | projects")
 
 @app.route("/contact")
 def contact_me():
-    return give("contactme.html", download=PATHS)
+    return give("contactme.html", download=PATHS, title="eliezerkenya | contact")
 
 @app.route("/feedback")
 def feedback_me():
-    return give("feedbackme.html", download=PATHS)
+    return give("feedbackme.html", download=PATHS, title="eliezerkenya | feedback")
 
 @app.route("/lsb")
 def lsb_home():
@@ -57,19 +57,19 @@ def lsb_home():
 
 @app.route("/lsb/download")
 def download():
-    return give("lsb.html", download=PATHS)
+    return give("lsb.html", download=PATHS, title="livesongbook | download")
 
 @app.route("/lsb/faqs")
 def faqs():
-    return give("faqs.html", download=PATHS)
+    return give("faqs.html", download=PATHS, title="eliezerkenya | FAQs")
 
 @app.route("/lsb/feedback")
 def feedback():
-    return give("feedback.html", download=PATHS)
+    return give("feedback.html", download=PATHS, title="livesongbook | feedback")
 
 @app.route("/lsb/contact")
 def contact():
-    return give("contact.html", download=PATHS)
+    return give("contact.html", download=PATHS, title="lsb developer | contact")
 
 
 @app.route("/lsb/download/exe")

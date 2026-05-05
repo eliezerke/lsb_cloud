@@ -1,4 +1,8 @@
-{% extends "base.html" %} {% block styles %}
+{% extends "base.html" %} {% block styles %} {% block title %} {% if title %}
+<title>{{title}}</title>
+{% else %}
+<title>eliezerkenya | home</title>
+{% endif %} {% endblock %}
 <link
   rel="stylesheet"
   href='{{url_for("static", filename="/styles/index.css")}}'
