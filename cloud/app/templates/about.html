@@ -3,6 +3,26 @@
 {% block styles %}
     <link rel="stylesheet" href="/static/styles/web.css"/>
 {% endblock %}
+{% block nav %}
+  <button
+    class="btn-link btn-secondary"
+    onclick="
+      alert(
+        'Coming soon! Keep on touch, God bless you. Thanks for your curiosity',
+      )
+    "
+  >
+    Gallery
+  </button>
+</li>
+<li>
+  <button class="btn-link btn-secondary" onclick="window.location.href = '/subscribe-to-newsletter?org=auth'">
+    Newsletter
+  </button>
+</li>
+<!-- <li><button class="btn-link btn-secondary" onclick="toggle.dark();">theme</button></li> -->
+
+{% endblock %}
 {% block main_content %}
 <span class="content-box-img"><img src="/static/img/eliezer3.png" width="50%"/></span>
 <h1 class="top-mar colored">About Me</h1>

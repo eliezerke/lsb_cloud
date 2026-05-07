@@ -1,6 +1,6 @@
 from app.api import app, db
 from paths import api_paths, web_paths
-from models.songbooks import EngSongBook, BsSongbook, SwSongbook, SongbookBugAndInfo
+from models.models import EngSongBook, BsSongbook, SwSongbook, SongbookBugAndInfo
 
 with app.app_context():
     db.create_all()

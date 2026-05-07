@@ -16,11 +16,16 @@ class DevStruct():
         "user_agent": fields.String
     }
 
+    FEEDBK_INFO = {
+        "id": fields.Integer,
+        "contact": fields.String,
+        "message": fields.String,
+    }
+
     MAIL_INFO = {
         "id": fields.Integer,
         "name": fields.String,
         "email": fields.String,
-        "src_org": fields.String
     }
 
     MEDIA_INFO = {

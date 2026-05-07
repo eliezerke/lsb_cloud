@@ -22,13 +22,11 @@
   <div class="card">
     <div class="logo">
       <div class="logo-icon"><img src="/static/img/img.png" width="35"></div>
-      <span class="logo-text">Newsletter</span>
+      <span class="logo-text">{{struct.title}}</span>
     </div>
 
-    <h1>Subscription added!</h1>
-    <p class="subtitle">By subscribing to this newsletter you'll be able to receive updates from eliezerkenya about lsb and more.</p>
-
-    <!-- Google -->
+    <h1>{{struct.sub}}</h1>
+    <p class="subtitle">{{struct.info}}</p>
     <button onclick="window.location.href = './'" class="sc-btn platfm">
       <b>Go back</b>
       <span class="btn-dot"></span>

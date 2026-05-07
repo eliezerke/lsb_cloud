@@ -3,7 +3,13 @@
   rel="stylesheet"
   href='{{url_for("static", filename="/styles/index.css")}}'
 />
-{% endblock %} {% block main_content %}
+{% endblock %} 
+{% block nav %}
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/faqs';">FAQs</button></li>
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/subscribe-to-newsletter?org=lsb';">Subscribe</button></li>
+{% endblock %}
+
+{% block main_content %}
 
 <div class="descr">
   <h1 style="padding: 5px">Select platform to download the app for</h1>

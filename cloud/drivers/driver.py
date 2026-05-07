@@ -1,4 +1,4 @@
-from models.songbooks import SongbookBugAndInfo, EngSongBook, SwSongbook, BsSongbook, DeviceInfo, MediaPath, NewsLetter
+from models.models import SongbookBugAndInfo, EngSongBook, SwSongbook, BsSongbook, DeviceInfo, MediaPath, NewsLetter, Feedback
 from flask_restful import reqparse, Resource, marshal_with
 from app.structures import Songbook_struct, DevStruct
 from app.api import db
@@ -13,6 +13,15 @@ class MediaRepo(Resource):
     def get(self):
         return MediaPath().query.all()
 
+class MsgFeedbacks(Resource):
+    @marshal_with(DevStruct.FEEDBK_INFO)
+    def post(self):
+        messages = Feedback().query.all()
+        return messages
+    
+    def get(self):
+      return {"message": "this path, is not found: does not exist!"}
+    
 class NewsletterSubscription(Resource):
     @marshal_with(DevStruct.MAIL_INFO)
     def post(self):

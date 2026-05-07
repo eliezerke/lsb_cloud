@@ -1,10 +1,10 @@
 from flask import render_template as give, send_file, request, redirect, flash
+from sqlalchemy import exc as SQLERR
 from models.download_struct import PATHS
-from models.songbooks import RegDwn, DeviceInfo, MediaPath, NewsLetter
+from models.models import RegDwn, DeviceInfo, MediaPath, NewsLetter, Feedback
 from app.api import app, db
 
 plus = lambda e: (e + 1)
-
 def identify_request(req: dict):
     if req != {}:
         keys = req.keys()
@@ -35,6 +35,25 @@ def register(raw):
 
         db.session.commit()
 
+def subscribeNewsletter(user: dict):
+    user = NewsLetter(name=user['user-name'], email=user["user-email"])
+    try:
+        db.session.add(user)
+        db.session.commit()
+        return False
+    except SQLERR.IntegrityError as e:
+         print(e)
+         return True
+    
+def send_feedback(user: dict):
+    user = Feedback(contact=user['user-contact'], message=user["user-message"])
+    try:
+        db.session.add(user)
+        db.session.commit()
+        return False
+    except SQLERR.IntegrityError:
+         return True
+
 @app.route("/email") 
 def email():
   return redirect("mailto:dev.eliezer.media@gmail.com")
@@ -56,23 +75,35 @@ def projects():
 def contact_me():
     return give("contactme.html", download=PATHS, title="eliezerkenya | contact")
 
-@app.route("/feedback")
+@app.route("/feedback", methods=["GET", "POST"])
+@app.route("/lsb/feedback", methods=["GET", "POST"])
 def feedback_me():
-    return give("feedbackme.html", download=PATHS, title="eliezerkenya | feedback")
+    if request.method == "GET":
+        return give("feedback.html", download=PATHS, title="Feedback | form")
+        
+    if request.method == "POST":
+        state = send_feedback(request.form)
+        flash(
+            message="Successfully submitted feedback thanks!" if state == False else "Failed! Not submitted, try again! Thanks", 
+            category="success" if state == False else "error"
+            )
+        return give("success.html", download=PATHS, title="Feedback | sent", struct={"title": "Feedback submitted!", "sub": "Successful", "info": "Thanks for your feedback."})
+
 
 @app.route("/lsb/subscribe-to-newsletter", methods=["GET", "POST"])
 @app.route("/subscribe-to-newsletter", methods=["GET", "POST"])
 @app.route("/subscribe-to-newsletter", methods=["GET", "POST"])
-
 def subscribe():
-    data = {}
     if request.method == "GET":
-        data["origin"] = request.args["org"]
         return give("subscribe.html", download=PATHS, title="Newsletter | Subscription")
     
     if request.method == "POST":
-        flash(message="Successfully subscribed to our newsletter!", category="success")
-        return give("success.html", download=PATHS, title="Newsletter | subscribed")
+        state = subscribeNewsletter(request.form)
+        flash(
+            message="Successfully subscribed to our newsletter!" if state == False else "Failed! Seems already subscribed. Thanks", 
+              category="success" if state == False else "error"
+              )
+        return give("success.html", download=PATHS, title="Newsletter | subscribed", struct={"title": "Newsletter", "sub": "Newsletter subscription", "info": "Subscribing to this newsletter you'll be able to receive updates from eliezerkenya about lsb and more."})
 
 @app.route("/lsb/")
 @app.route("/lsb")
@@ -87,10 +118,6 @@ def download():
 @app.route("/lsb/faqs")
 def faqs():
     return give("faqs.html", download=PATHS, title="eliezerkenya | FAQs")
-
-@app.route("/lsb/feedback")
-def feedback():
-    return give("feedback.html", download=PATHS, title="livesongbook | feedback")
 
 @app.route("/lsb/contact")
 def contact():

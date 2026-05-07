@@ -2,6 +2,10 @@
 {% block styles %}
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/faqs.css")}}'/>
 {% endblock %}
+{% block nav %}
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/download';">Download app</button></li>
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/subscribe-to-newsletter?org=lsb';">Subscribe</button></li>
+{% endblock %}
 {% block main_content %}
 <h1 style="padding: 25px;">Frequently Asked Questions</h1>
 

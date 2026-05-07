@@ -54,4 +54,8 @@ class NewsLetter(db.Model):
     id = db.Column("id", db.Integer, primary_key=True, unique=True)
     name = db.Column(db.String(50), nullable=True)
     email = db.Column(db.String(110), nullable=False, unique=True)
-    src_org = db.Column(db.String(5), nullable=False)
+
+class Feedback(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True, unique=True)
+    contact = db.Column(db.String(110), nullable=True, unique=False)
+    message = db.Column(db.String(1000), nullable=True)

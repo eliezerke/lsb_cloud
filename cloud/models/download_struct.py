@@ -1,4 +1,4 @@
-from models.songbooks import EngSongBook, SwSongbook
+from models.models import EngSongBook, SwSongbook
 from app.api import app
 
 with app.app_context():
