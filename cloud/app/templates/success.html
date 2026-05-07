@@ -1,0 +1,44 @@
+{% extends "parent.html" %}
+{% block content %}
+<nav class="nav">
+  <div class="nav-logo"></div>
+  <a href="/lsb/download" class="logout-btn">
+    Download app
+  </a>
+</nav>
+ <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flashes">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+  </div>
+<div class="page">
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon"><img src="/static/img/img.png" width="35"></div>
+      <span class="logo-text">Newsletter</span>
+    </div>
+
+    <h1>Subscription added!</h1>
+    <p class="subtitle">By subscribing to this newsletter you'll be able to receive updates from eliezerkenya about lsb and more.</p>
+
+    <!-- Google -->
+    <button onclick="window.location.href = './'" class="sc-btn platfm">
+      <b>Go back</b>
+      <span class="btn-dot"></span>
+    </button>
+
+    <p class="footer-note">
+      By continuing, you agree to our
+      <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

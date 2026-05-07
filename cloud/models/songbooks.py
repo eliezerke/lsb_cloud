@@ -49,3 +49,9 @@ class DeviceInfo(db.Model):
 class MediaPath(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     path = db.Column(db.String(20))
+
+class NewsLetter(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True, unique=True)
+    name = db.Column(db.String(50), nullable=True)
+    email = db.Column(db.String(110), nullable=False, unique=True)
+    src_org = db.Column(db.String(5), nullable=False)

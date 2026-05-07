@@ -64,6 +64,7 @@
 <li><a href="/about" class="drawer-actions visible">About me</a></li>
 <li><a href="/contact" class="drawer-actions visible">Contact</a></li>
 <li><a href="/feedback" class="drawer-actions visible">Feedback</a></li>
+<li><a href="/subscribe-to-newsletter?org=auth" class="drawer-actions visible">Subscribe</a></li>
 <!-- <li><a href="/" class="drawer-actions visible">Products</a></li> -->
 
 {% endblock %} {% block nav_panel %}
@@ -105,6 +106,12 @@
     class="btn-spacing btn-link-gen btn-gen-primary"
   >
     Feedback
+  </button>
+  <button
+    onclick="window.location.href = '/subscribe-to-newsletter?org=auth'"
+    class="btn-spacing btn-link-gen btn-gen-primary"
+  >
+    Subscribe
   </button>
 </div>
 <p class="drawer-action-footer">&copy; eliezerkenya</p>

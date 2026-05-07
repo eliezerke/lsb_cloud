@@ -1,6 +1,6 @@
-from flask import render_template as give, send_file, request, redirect
+from flask import render_template as give, send_file, request, redirect, flash
 from models.download_struct import PATHS
-from models.songbooks import RegDwn, DeviceInfo, MediaPath
+from models.songbooks import RegDwn, DeviceInfo, MediaPath, NewsLetter
 from app.api import app, db
 
 plus = lambda e: (e + 1)
@@ -60,6 +60,21 @@ def contact_me():
 def feedback_me():
     return give("feedbackme.html", download=PATHS, title="eliezerkenya | feedback")
 
+@app.route("/lsb/subscribe-to-newsletter", methods=["GET", "POST"])
+@app.route("/subscribe-to-newsletter", methods=["GET", "POST"])
+@app.route("/subscribe-to-newsletter", methods=["GET", "POST"])
+
+def subscribe():
+    data = {}
+    if request.method == "GET":
+        data["origin"] = request.args["org"]
+        return give("subscribe.html", download=PATHS, title="Newsletter | Subscription")
+    
+    if request.method == "POST":
+        flash(message="Successfully subscribed to our newsletter!", category="success")
+        return give("success.html", download=PATHS, title="Newsletter | subscribed")
+
+@app.route("/lsb/")
 @app.route("/lsb")
 def lsb_home():
     identify_request(request.args)
@@ -81,35 +96,34 @@ def feedback():
 def contact():
     return give("contact.html", download=PATHS, title="lsb developer | contact")
 
-
-@app.route("/lsb/download/exe")
+@app.route("/lsb/download/exe", methods=["POST", "GET"])
 def download_exe():
     register(request.args)
     return send_file("static/downloads/path.exe", download_name="win64_lsb_v1.0.exe")
 
-@app.route("/lsb/download/apk")
+@app.route("/lsb/download/apk", methods=["POST", "GET"])
 def download_apk():
     register(request.args)
     return send_file("static/downloads/path.apk", download_name="lsb_v1.0.apk")
 
 
-@app.route("/lsb/download/deb")
+@app.route("/lsb/download/deb", methods=["POST", "GET"])
 def download_linux():
     register(request.args)
     return send_file("static/downloads/path.deb", download_name="lsb-desktop-app_1.0.0_amd64.deb")
 
-@app.route("/lsb/download/tar/gz")
+@app.route("/lsb/download/tar/gz", methods=["POST", "GET"])
 def download_linux_archive():
     register(request.args)
     return send_file("static/downloads/path.tar.gz", download_name="lsb_linux_X64_v1.0_archive.tar.gz")
 
 
-@app.route("/lsb/download/zip")
+@app.route("/lsb/download/zip", methods=["POST", "GET"])
 def download_win_zip():
     register(request.args)
     return send_file("static/downloads/path.rar", download_name="win64_lsb_1.0.rar")
 
-@app.route("/lsb/guide/pdf")
+@app.route("/lsb/guide/pdf", methods=["POST", "GET"])
 def download_guide_pdf():
     register(request.args)
     return send_file("static/downloads/guide.pdf", download_name="livesongbook_guide.pdf")
