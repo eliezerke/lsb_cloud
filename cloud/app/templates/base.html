@@ -27,7 +27,7 @@
     </div>
     {% endblock %}
     
-    <ul class="nav-menu right-nav">
+    <ul class="nav-menu right-nav welcome">
         {% block nav %}
         <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/faqs';">FAQs</button></li>
         <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/download';">Download app</button></li>
@@ -52,6 +52,7 @@
                 <li><a href="/lsb/faqs" class="drawer-actions visible">FAQs</a></li>
                 <li><a href="/" class="drawer-actions visible">Developer</a></li>
                 <li><a href="/lsb/subscribe-to-newsletter?org=lsb" class="drawer-actions visible">Subscribe</a></li>
+                <li><a href="/lsb/guide" class="drawer-actions visible">Guide PDF</a></li>
                 {% endblock %}
                 </ul>
             </div>            
@@ -76,7 +77,7 @@
                     <button onclick="window.location.href='/lsb/feedback';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Feedback</button>
                     <button onclick="window.location.href='/';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Developer</button>
                     <button onclick="window.location.href='/lsb/subscribe-to-newsletter?org=lsb';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Subscribe</button>
-                    <!-- <button onclick="window.location.href = '{{download.pdf}}';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button> -->
+                    <button onclick="window.location.href = '/lsb/guide';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button>
                 </div>
                 <p class="drawer-action-footer">&copy; eliezerkenya</p>
                 {% endblock %}

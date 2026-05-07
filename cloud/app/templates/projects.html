@@ -1,62 +1,40 @@
-{% extends "main.html" %}
-
-{% block styles %}
+{% extends "main.html" %} {% block styles %}
 <link rel="stylesheet" href="/static/styles/web.css" />
 <link rel="stylesheet" href="/static/styles/projects.css" />
-{% endblock %}
+{% endblock %} {% block nav %}
 
-{% block nav %}
-<li>
-  <button
-    class="btn-link btn-secondary"
-    onclick="window.location.href = '/about'"
-  >
-    Portfolio
-  </button>
-</li>
-<li>
-  <button
-    class="btn-link btn-secondary"
-    onclick="
-      alert(
-        'Coming soon! Keep on touch, God bless you. Thanks for your curiosity',
-      )
-    "
-  >
-    Gallery
-  </button>
-</li>
+<li><button class="btn-link btn-secondary" onclick="window.location.href = '/about'">Portfolio</button></li>
+<li><button class="btn-link btn-secondary" onclick="alert('Coming soon! Keep on touch, God bless you. Thanks for your curiosity')">Gallery</button></li>
 
-{% endblock %}
-
-{% block main_content %}
+{% endblock %} {% block main_content %}
 <h1 class="projects-title">Projects</h1>
 <div class="projects">
-
-    <p class="sub-header">#Released(1)</p>
-    <div onclick="window.location.href = `https://github.com/eliezerke`;" class="project flex">
-        <div class="project-img-rel"></div>  
-        <div class="project-title">
-            <h3>1. Livesongbook</h3>
-        </div>
-        <div class="project-content">
-            <h5>The believer's songs of worship app </h5> 
-        </div>
+  <p class="sub-header">#Released(1)</p>
+  <div
+    onclick="window.location.href = `https://github.com/eliezerke`"
+    class="project flex"
+  >
+    <div class="project-img-rel"></div>
+    <div class="project-title">
+      <h3>1. Livesongbook</h3>
     </div>
-    <p class="sub-header">#Upcoming(1)</p>
-    <div onclick="window.location.href = `https://github.com/eliezerke`;" class="project flex">
-        <div class="project-img-upc"></div>  
-        <div class="project-title">
-            <h3>1. ETKids app</h3>
-        </div>
-        <div class="project-content">
-            <h5>The believer's children script of learning/moulding </h5>
-        </div>
+    <div class="project-content">
+      <h5>The believer's songs of worship app</h5>
     </div>
-
+  </div>
+  <p class="sub-header">#Upcoming(1)</p>
+  <div
+    onclick="window.location.href = `https://github.com/eliezerke`"
+    class="project flex"
+  >
+    <div class="project-img-upc"></div>
+    <div class="project-title">
+      <h3>1. ETKids app</h3>
+    </div>
+    <div class="project-content">
+      <h5>The believer's children script of learning/moulding</h5>
+    </div>
+  </div>
 </div>
 
-{% endblock %}
-
-{% block quick_index %}
-{% endblock %}
+{% endblock %} {% block quick_index %} {% endblock %}
