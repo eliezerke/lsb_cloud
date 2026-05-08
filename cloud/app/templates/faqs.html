@@ -2,6 +2,10 @@
 {% block styles %}
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/faqs.css")}}'/>
 {% endblock %}
+{% block nav %}
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/download';">Download app</button></li>
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/subscribe-to-newsletter?org=lsb';">Subscribe</button></li>
+{% endblock %}
 {% block main_content %}
 <h1 style="padding: 25px;">Frequently Asked Questions</h1>
 
@@ -18,7 +22,7 @@
 <button class="accordion btn btn-secondary">How can I download it?</button>
 <div class="panel">
   <div>
-    <p class="p">Well. If you are getting trouble in downloading LSB app please, contact the developer, visit the download page and follow the procedures or look for someone who already has it to guide you through</p>
+    <p class="p">Well. If you are getting trouble in downloading LSB app please, contact the developer, visit the download page and follow the procedures or look for someone who already has it to guide you through </p>
   </div >
 </div>
 
@@ -28,6 +32,18 @@
     <p class="p">The message believer or anyone feeling like using it, of any age </p>
   </div >
 </div>
+
+<button class="accordion btn btn-secondary">Installing for linux?</button>
+<div class="panel">
+  <div>
+    <p class="p">1. the .deb file: after downloading the file, open terminal with the download directory in the terminal. run<br><br>
+      <b class="" style="font-family: monospace; margin: 10px; color: rgb(149, 149, 149);">  $ sudo apt -i DOWNLOADED_FILE_NAME.deb </b><br><br>
+      2. The zip .tar.gz extract it on the desired path then open the livesongbook file, if you wish to create a shortcut, no problem it will still run.
+    </p>
+    
+  </div >
+</div>
+
 <button class="accordion btn btn-secondary">Version 1.0 release date</button>
 <div class="panel">
   <div>

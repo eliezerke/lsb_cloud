@@ -16,27 +16,27 @@
         </div>
       {% endif %}
     {% endwith %}
+
   </div>
 <div class="page">
   <div class="card">
     <div class="logo">
       <div class="logo-icon"><img src="/static/img/img.png" width="35"></div>
-      <span class="logo-text">Feedback {{page}}</span>
+      <span class="logo-text">{{struct.title}}</span>
     </div>
-    <h1>Leave your feedback!</h1>
-    <p class="subtitle">Remember that your feedback is highly appreciated, feel free to tell me anything. God bless you. <b>*Note:</b> Email/phone is optional, if you need answers</p>
-     <form id="user" action="./feedback" method="POST" onsubmit="window.location.href = window.navigation.back()">
-    <input name="user-contact" class="sc-btn" type="text" placeholder="Email/phone(Optional)">
-    <textarea required name="user-message" class="sc-btn" type="text" placeholder="Enter your feedback here..."></textarea>
-    <button type="submit" class="sc-btn platfm">
-      <b>Drop feedback</b>
+
+    <h1>{{struct.sub}}</h1>
+    <p class="subtitle">{{struct.info}}</p>
+    <button onclick="window.location.href = './'" class="sc-btn platfm">
+      <b>Go back</b>
       <span class="btn-dot"></span>
     </button>
-    </form>
+
     <p class="footer-note">
       By continuing, you agree to our
       <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
     </p>
   </div>
 </div>
+
 {% endblock %}

@@ -1,7 +1,15 @@
+{% if msc %}
+{% extends "main.html" %}
+{% else %}
 {% extends "base.html" %}
+{% endif %}
 
 {% block styles %}
 <link rel="stylesheet" href='{{url_for("static", filename="/styles/contact.css")}}' />
+{% if msc %}
+<link rel="stylesheet" href='{{url_for("static", filename="/styles/web.css")}}' />
+{% else %}
+{% endif %}
 {% endblock %}
 
 {% block main_content %}

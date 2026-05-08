@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> eliezersoftdevs </title>
+{% block title %}
+{% if title %}
+<title>{{title}}</title>
+{% else %}
+<title>livesongbook | home</title>
+{% endif %} 
+{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1"/>
+    {% block meta %}
+    <meta name="description" content="The all in one songbook, get mobile/desktop app now.">
+    {% endblock %}
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/style.css")}}'/>
     <link rel="stylesheet" href='{{url_for("static", filename="/styles/drawer.css")}}'/>
-    <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="/img/favicon.ico")}}'/>
-
+    {% block icon %}
+    <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="/img/bride.png")}}'/>
+    {% endblock %}
     {% block styles %}
     {% endblock %}
 </head>
 <body>
-<nav class="nav-bar flex" id="navbar">
+    <nav class="nav-bar flex" id="navbar">
+    {% block opp_image %}
     <div onclick="window.location.href = '/lsb';" class="left-nav flex">
     </div>
+    {% endblock %}
     
-    <ul class="nav-menu right-nav">
+    <ul class="nav-menu right-nav welcome">
         {% block nav %}
         <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/faqs';">FAQs</button></li>
         <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/download';">Download app</button></li>
+        <li><button class="btn-link btn-secondary" onclick="window.location.href = '/lsb/subscribe-to-newsletter?org=lsb';">Subscribe</button></li>
         <!-- <li><button class="btn-link btn-secondary" onclick="toggle.dark();">theme</button></li> -->
         {% endblock %}
     </ul>
@@ -37,6 +50,9 @@
                 <li><a href="/lsb/download" class="drawer-actions visible">Download</a></li>
                 <li><a href="/lsb/feedback" class="drawer-actions visible">Feedback</a></li>
                 <li><a href="/lsb/faqs" class="drawer-actions visible">FAQs</a></li>
+                <li><a href="/" class="drawer-actions visible">Developer</a></li>
+                <li><a href="/lsb/subscribe-to-newsletter?org=lsb" class="drawer-actions visible">Subscribe</a></li>
+                <li><a href="/lsb/guide" class="drawer-actions visible">Guide PDF</a></li>
                 {% endblock %}
                 </ul>
             </div>            
@@ -52,14 +68,16 @@
     <div class="cont flex">
         <div class="moveable flex">
             <div class="div-spacing left-with-bg flex" id="leftpane">
-                <p class="centered p colored">Quick actions</p>
+                <p class="centered p colored">Quick panel</p>
                 {% block nav_panel %}
                 <div class="both">
                     <button onclick="window.location.href='/lsb';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Homepage</button>
                     <button onclick="window.location.href='/lsb/download';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Download</button>
                     <button onclick="window.location.href='/lsb/contact';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Contact</button>
                     <button onclick="window.location.href='/lsb/feedback';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Feedback</button>
-                    <!-- <button onclick="window.location.href = '{{download.pdf}}';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button> -->
+                    <button onclick="window.location.href='/';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Developer</button>
+                    <button onclick="window.location.href='/lsb/subscribe-to-newsletter?org=lsb';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Subscribe</button>
+                    <button onclick="window.location.href = '/lsb/guide';" class="actionbtn btn-spacing btn-link-gen btn-gen-primary">Guide PDF</button>
                 </div>
                 <p class="drawer-action-footer">&copy; eliezerkenya</p>
                 {% endblock %}

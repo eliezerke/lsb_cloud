@@ -4,20 +4,20 @@
 {% endblock %}
 {% block main_content %}
 
-<div class="descr">
+<div class="descr welcome">
     <img src='{{url_for("static", filename="/img/top.png")}}' width="75%"/>
-    <h1 style="padding: 5px;">Welcome to livesongbook's official website, download this app now! With one tap and enjoy singing!</h1>
+    <h1 style="padding: 5px;">Welcome to LSB's official website, download this app now! With one tap and enjoy singing!</h1>
     <h3> </h3>
     <h3></h3>
     <div class="flex descr center">
         <button onclick="window.location.href = '/lsb/download';" class="btn-spacing btn btn-temp join">Download</button>
-        <button onclick="window.location.href = '{{download.pdf}}';" class="btn-spacing btn btn-temp">Learn more</button>
+        <button onclick="window.location.href = '/lsb/subscribe-to-newsletter?org=lsb';" class="btn-spacing btn btn-temp">Newsletter</button>
     </div>
     <div class="descr center">
         <h3></h3>
     </div>
 </div>
-<div class="descr ">
+<div class="descr welcome">
     <img src='{{url_for("static", filename="/img/mobile.png")}}' width="50%"/>
     <h1 style="padding: 5px;">Get the apk for Android phones & tablets, and get full experience for free and remember. ``No Ads``</h1>
     <h3> </h3>
@@ -30,15 +30,15 @@
         <h3></h3>
     </div>
 </div>
-<div class="descr ">
+<div class="descr welcome">
     <img src='{{url_for("static", filename="/img/pc.png")}}' width="50%"/>
     <h1 style="padding: 5px;">Desktop setup. This is the heart of the project's functionality, cool presentation view and friendly interface for easy operation, it's currently supported in Windows and Linux OS only.</h1>
     <h3> </h3>
     <h3></h3>
     <div class="flex descr center">
 
-        <button style="border-radius: 50px;" onclick="RegDownload(0, '{{download.exe}}')" class="btn-spacing btn btn-temp">Windows</button>
-        <button style="border-radius: 50px;" onclick="RegDownload(1, '{{download.tar}}')" class="btn-spacing btn btn-temp">Linux</button>
+        <button style="border-radius: 50px;" onclick="RegDownload(0, '{{download.exe}}')" class="btn-spacing btn btn-temp join">Windows</button>
+        <button style="border-radius: 50px;" onclick="RegDownload(4, '{{download.deb}}')" class="btn-spacing btn btn-temp">Linux</button>
     </div>
     <div class="descr center">
         <h3></h3>

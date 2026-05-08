@@ -7,7 +7,6 @@ class EngSongBook(db.Model):
     lyrics = db.Column(db.String(100000), unique=True)
     key = db.Column(db.String(10), unique=True)
     
-    
 class SwSongbook(db.Model):
     __tablename__ = "songbook_sw"
     id = db.Column("id", db.Integer, primary_key=True)
@@ -47,5 +46,16 @@ class DeviceInfo(db.Model):
     user_agent = db.Column(db.String)
     ext = db.Column(db.Integer)
 
-    def __repr__(self):
-        return f"EXT: {self.ext}, USER_AGENT: {self.user_agent}, PLATFORM: {self.platform}"
+class MediaPath(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True)
+    path = db.Column(db.String(20))
+
+class NewsLetter(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True, unique=True)
+    name = db.Column(db.String(50), nullable=True)
+    email = db.Column(db.String(110), nullable=False, unique=True)
+
+class Feedback(db.Model):
+    id = db.Column("id", db.Integer, primary_key=True, unique=True)
+    contact = db.Column(db.String(110), nullable=True, unique=False)
+    message = db.Column(db.String(1000), nullable=True)

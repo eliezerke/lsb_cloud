@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% if title %}
+            {{ title }}
+            {% else %}
+            livesongbook | newsletter
+            {% endif %}
+        </title>
+        <link rel="stylesheet" href="/static/styles/main.css" />
+        <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="/img/ico.png")}}'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0.0" />
+        <meta description="livesongbook | newsletter" />
+    </head>
+<body>
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flashes">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+  {% block scripts %}{% endblock %}
+  <footer class="page-footer" id="footer">
+    <div class="footer-content" id="footercontent">
+        {% block footer %}
+        <p class="footer-text" id="footertext">&copy; eliezerkenya 2026 . All rights Reserved</p>
+        {% endblock %}
+    </div>
+</footer>
+<script src="/static/scripts/index.js"></script>
+</body>
+</html>
